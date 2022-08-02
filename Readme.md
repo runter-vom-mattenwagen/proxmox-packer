@@ -20,7 +20,7 @@ Modify the following files to your needs:
 
 ### vars.pkr.hcl - assingment of variables used in packer.pkr.hcl
 
-- "rocky_images" must match the name of your iso file on proxmox
+- "iso_image" must match the name of your iso file on proxmox
 - "proxmox_password"/"proxmox_username": A Proxmox user that can create VMs
 - "template_name": How the VM should be named
 
@@ -54,7 +54,7 @@ Modify the following files to your needs:
 ## Next steps 
 
 - create a VM from the template by using Terraform or the builtin functionality of Proxmox
-- use the login you've set in ks.cfg to enter the new VM
+- use the login you've set in ks.cfg resp. user-data to enter the new VM
 
 ## Resources
 

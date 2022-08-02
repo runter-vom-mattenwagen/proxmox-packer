@@ -1,4 +1,4 @@
-variable "rocky_image" {
+variable "iso_image" {
     default = "Rocky-8.6-x86_64-minimal.iso"
 }
 

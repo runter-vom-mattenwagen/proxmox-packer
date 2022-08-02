@@ -19,7 +19,7 @@ source "proxmox" "ubuntu" {
   }
   http_directory           = "http"
   insecure_skip_tls_verify = true
-  iso_file                 = "local:iso/${var.ubuntu_image}"
+  iso_file                 = "local:iso/${var.iso_image}"
   memory                   = "1024"
   network_adapters {
     bridge = "vmbr0"

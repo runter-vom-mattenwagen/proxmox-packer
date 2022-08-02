@@ -1,4 +1,4 @@
-variable "ubuntu_image" {
+variable "iso_image" {
   default = "ubuntu-22.04-live-server-amd64.iso"
 }
 
