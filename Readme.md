@@ -3,7 +3,7 @@
 ## Preparation
 
 - have a working Proxmox server
-- download the installation image from https://rockylinux.org/download
+- download the installation image from https://rockylinux.org/download resp. https://ubuntu.com/download/server
 - upload the iso file to the iso directory of your Proxmox server
 - install or download download packer according to: https://www.packer.io/downloads
 - clone this Git repo to your Linux box.
@@ -24,16 +24,23 @@ Modify the following files to your needs:
 - "proxmox_password"/"proxmox_username": A Proxmox user that can create VMs
 - "template_name": How the VM should be named
 
-### ks.cfg - Kickstart file
+### Rockylinux: ks.cfg - Kickstart file
 
 - automates the installation process
 - Ansible-part contains invalid ssh-key. Add your own :-)
 - note that "repo --name=" must match your version of RockyLinux
 - content is also result of searching the internet
 
+### Ubuntu: http/user-data
+
+- cloud-init based autoinstall
+- Identity must match username/password in packer.pkr.hcl
+- Reference: https://ubuntu.com/server/docs/install/autoinstall-reference
+
 ### setup.sh - post-configuration
 
-- will be executed after the 1st start of VM
+- will be executed after the 1st start of VM within the templating process
+- Cloud-init part forces update and restart after creation a VM
 - content is stolen from different sources on the internet and the result of my own fiddling
 
 

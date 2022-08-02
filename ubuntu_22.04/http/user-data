@@ -1,0 +1,26 @@
+#cloud-config
+autoinstall:
+    version: 1
+    locale: de_DE
+    keyboard:
+        layout: de
+    identity:
+        hostname: ubuntu
+        username: ubuntu
+        password: "$6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0" #ubuntu
+    ssh:
+        install-server: yes
+    packages:
+      - qemu-guest-agent
+    storage:
+        layout:
+            name: direct
+    user-data:
+        timezone: Europe/Berlin
+        package_upgrade: true
+        users:
+          - name: ansible
+            sudo: ALL=(ALL) NOPASSWD:ALL
+            shell: /bin/bash
+            ssh_authorized_keys:
+              - ssh-rsa BBAFHCkjdk4kkjgGKFHkldA... ansible@anyhere
