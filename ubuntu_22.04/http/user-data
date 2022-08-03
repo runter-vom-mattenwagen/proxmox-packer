@@ -23,4 +23,4 @@ autoinstall:
             sudo: ALL=(ALL) NOPASSWD:ALL
             shell: /bin/bash
             ssh_authorized_keys:
-              - ssh-rsa BBAFHCkjdk4kkjgGKFHkldA... ansible@anyhere
+              - ssh-rsa BBAFHCkjdk4kkjgGKFHkldA... ansible@anywhere
