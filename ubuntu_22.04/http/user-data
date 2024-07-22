@@ -12,6 +12,8 @@ autoinstall:
         install-server: yes
     packages:
       - qemu-guest-agent
+      - vim
+      - unzip
     storage:
         layout:
             name: direct
@@ -23,4 +25,6 @@ autoinstall:
             sudo: ALL=(ALL) NOPASSWD:ALL
             shell: /bin/bash
             ssh_authorized_keys:
-              - ssh-rsa BBAFHCkjdk4kkjgGKFHkldA... ansible@anywhere
+              - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8/VkRNwrvHP0v9jZnWUwWUpiJ0pB+pTRhjZM/pt+YtNmpdcCSuqAy3Q+ubJZWUJyHtSS4SjummNlOEtHUtWIejmBUL4TzmdXZml3B7qbrzMqpd3QhkMqx3Pe37Qfz2lHGKBYqEbtBHWOx0qD2saFASAXJYNAkqYAlk5lVeVQ4VSDSNk93PE3K1a8h82cEeKO23zkmgsaBacg1L5F83Eg+st1wobSMcmwsSw8J1k4oCR8ZDGvxYvyJ2xmsvJm6Sx2vqL7/EjnNaj+16Mk9TSMkDrpGiXpiAnGgKOLcWHdUNCTZmCmAxnk5LKka6D2LY15qVq0tq/lynL6L0HcaZuIT ansible@anywhere
+    late-commands:
+        - echo "$(date)" > /tmp/image_by_packer_date
